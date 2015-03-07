@@ -12,9 +12,9 @@ class SchoolsController < ApplicationController
   end
 
   def create
-    @article = Article.new(school_params)
-    @article.save
-    redirect_to @article
+    @school = School.new(school_params)
+    @school.save
+    redirect_to @school
   end
 
   private
