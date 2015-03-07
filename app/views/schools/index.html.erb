@@ -1,0 +1,16 @@
+<h1>Listing schools</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Locality</th>
+  </tr>
+
+  <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.name %></td>
+      <td><%= school.locality %></td>
+      <td><%= link_to 'Show', school_path(school) %></td>
+    </tr>
+  <% end %>
+</table>
