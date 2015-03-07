@@ -1,0 +1,47 @@
+<h1> Add a review </h1>
+
+<%= form_for :review, url: reviews_path do |f| %>
+  <p>
+    <%= f.label :School %><br>
+    <%= f.collection_select :school_id, @schools, :name, :id, {}%>  </p>
+
+  <p>
+    Is the school located in a safe neighbourhood? Are you concerned about the people in the area?<br>
+    <%= f.select :surroundings_good, options_for_select(%w[Yes No]) %>
+  </p>
+
+
+  <p>
+    Do you believe that the school has verified the background of the teachers?<br>
+    <%= f.select :teacher_bg, options_for_select(%w[Yes Maybe No]) %>
+  </p>
+
+  <p>
+    Do you believe that the school has verified the background of the helpers?<br>
+    <%= f.select :helpers_bg, options_for_select(%w[Yes Maybe No]) %>
+  </p>
+
+  <p>
+    Are you happy with the security arrangements at the school? <br>
+    <%= f.select :security, options_for_select(%w[Yes Maybe No])%>
+  </p>
+
+  <p>
+    Do you / does your child feel safe at school? <br>
+    <%= f.select :security, options_for_select(%w[Yes No])  %>
+  </p>
+
+  <p>
+    Comments <br>
+    <%= f.text_area :comments, {:cols => "55", :rows => "7",} %>
+  </p>
+
+  <p>
+    Overall rating<br>
+    <%= f.select :overall_rating, options_for_select(1..5) %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
