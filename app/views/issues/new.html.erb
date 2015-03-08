@@ -7,7 +7,7 @@
           <fieldset>
             <p>
               <strong> School </strong><br>
-              <%= f.collection_select :school_id, @schools, :id, :name, {}, {class: "form-control dropdown-menu"}%>
+              <%= f.collection_select :school_id, @schools, :id, :name, {class: "form-control dropdown-menu", style: "width:200px"}%>
             </p>
 
             <p>
@@ -33,11 +33,6 @@
 
           </fieldset>
         </div>
-
-        <%= link_to root_path, class: 'btn btn-lg btn-primary' do %>
-          <i class="glyphicon glyphicon-plus"></i> Home
-        <% end %>
-
       <% end %>
     </div>
   </div>

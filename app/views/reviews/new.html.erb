@@ -2,49 +2,49 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
 
-      <h1> Add a review </h1>
+      <h3> Add a review </h3>
 
       <%= form_for :review, url: reviews_path, :html => { class: "form-horizontal" } do |f| %>
         <div class="form-group">
           <fieldset>
             <p>
-              <%= f.label :School %><br>
-              <%= f.collection_select :school_id, @schools, :id, :name, {class: "form-control dropdown-menu"}%>  </p>
+              <strong>Select school</strong><br>
+              <%= f.collection_select :school_id, @schools, :id, :name, {class: "form-control", style:"200px"}%>  </p>
             </p>
 
             <p>
-              Is the school located in a safe neighbourhood? <br>
-              <%= f.select :surroundings_good, options_for_select(%w[Yes No]), class: "form-control dropdown-menu" %>
+              <strong>Is the school located in a safe neighbourhood? </strong><br>
+              <%= f.select :surroundings_good, options_for_select(%w[Yes No]), {class: "form-control"} %>
             </p>
 
             <p>
-              Do you believe that the school has verified the background of the teachers?<br>
-              <%= f.select :teacher_bg, options_for_select(%w[Yes Maybe No]), class: "form-control dropdown-menu" %>
+              <strong>Do you believe that the school has verified the background of the teachers?</strong><br>
+              <%= f.select :teacher_bg, options_for_select(%w[Yes Maybe No]), class: "form-control" %>
             </p>
 
             <p>
-              Do you believe that the school has verified the background of the helpers?<br>
-              <%= f.select :helpers_bg, options_for_select(%w[Yes Maybe No]), class: "form-control dropdown-menu" %>
+              <strong>Do you believe that the school has verified the background of the support staff including school bus drivers?</strong><br>
+              <%= f.select :helpers_bg, options_for_select(%w[Yes Maybe No]), class: "form-control" %>
             </p>
 
             <p>
-              Are you happy with the security arrangements at the school? <br>
-              <%= f.select :security, options_for_select(%w[Yes Maybe No]), class: "form-control dropdown-menu"%>
+              <strong>Are you happy with the security arrangements at the school?</strong> <br>
+              <%= f.select :security, options_for_select(%w[Yes Maybe No]), class: "form-control"%>
             </p>
 
             <p>
-              Do you / does your child feel safe at school? <br>
-              <%= f.select :safe_at_school, options_for_select(%w[Yes No]), class: "form-control dropdown-menu"%>
+              <strong>Do you / does your child feel safe at school? </strong><br>
+              <%= f.select :safe_at_school, options_for_select(%w[Yes No]), class: "form-control"%>
             </p>
 
             <p>
-              Comments <br>
+              <strong>Comments <br>
               <%= f.text_area :comments, {:cols => "55", :rows => "7", class: "form-control", placeholder: "Leave a comment..."} %>
             </p>
 
             <p>
-              Overall rating<br>
-              <%= f.select :overall_rating, options_for_select([1..5]), class: "form-control dropdown-menu" %>
+              <strong>Overall rating</strong><br>
+              <%= f.select :overall_rating, options_for_select(1..5), class: "form-control " %>
             </p>
 
             <div class="control-group">

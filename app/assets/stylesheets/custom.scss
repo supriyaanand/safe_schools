@@ -1,0 +1,15 @@
+select{
+  margin: 100px;
+  border: 1px solid #111;
+  background: transparent;
+  background: url('small_black_arrow_down.gif') no-repeat right;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor:pointer;
+}
