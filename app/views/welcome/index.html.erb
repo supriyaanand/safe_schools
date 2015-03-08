@@ -16,7 +16,7 @@
         A portal designed for the purpose of inviting parents, students, teachers and all
         concerned citizens to report incidents of harassment and violence against children in our schools, particularly against the girl child.
         <br>   <br>
-        We seek suggestions and solutions to eliminate this growing evil of physical violence.
+        We seek suggestions and solutions to eliminate this growing evil of physical violence against vulnerable children.
         In particular, we invite the concerned government agencies to take notice of this worrying
         trend and to extend their fullest co-operation in making our schools safe for our children.
         <br>   <br>
@@ -28,9 +28,11 @@
     <div class="col-md-7">
         <div class="col-md-7 col-md-offset-12">
           <p> Rate your school, report issues, get school authorities to respond, feel safe in schools!</p>
-          <p><button class="btn btn-info" type="submit"><%="#{Issue.all.count} issues opened" %></button></p>
-          <p><button class="btn btn-info" type="submit"><%="#{Issue.where(status:"Closed").count} issues closed" %></button></p>
-          <p><button class="btn btn-info" type="submit"><%="#{Review.all.count} reviews posted" %></button></p>
+          <br> <br> <br> <br> <br> <br>
+          <p align="center"> <h4> ACTIVITY FEED </h4> </p>
+          <p><button class="btn btn-info" type="button" disabled="disabled"><%="#{Issue.all.count} issues opened" %></button></p>
+          <p><button class="btn btn-info" type="button" disabled="disabled"><%="#{Issue.where(status:"Closed").count} issues closed" %></button></p>
+          <p><button class="btn btn-info" type="button" disabled="disabled"><%="#{Review.all.count} reviews posted" %></button></p>
         </div>
     </div>
   </div>
