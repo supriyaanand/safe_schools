@@ -1,0 +1,23 @@
+<div class="container center_div">
+  <div class="row">
+    <div class="col-md-5">
+
+      <h3>Reviews posted</h3>
+      <table class="table table-bordered">
+        <tr>
+          <th>School</th>
+          <th>Posted on</th>
+          <th>View details</th>
+        </tr>
+        <% @reviews.each do |review| %>
+          <tr>
+            <td> <%= School.find(review.school_id).name %> </td>
+            <td> <%= review.created_at %> </td>
+            <td><%= link_to 'Details', review_path(review) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+

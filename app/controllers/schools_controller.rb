@@ -14,7 +14,7 @@ class SchoolsController < ApplicationController
   def create
     @school = School.new(school_params)
     @school.save
-    redirect_to @school
+    redirect_to root_path
   end
 
   private

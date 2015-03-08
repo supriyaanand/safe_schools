@@ -4,6 +4,10 @@ class ReviewsController < ApplicationController
     @schools = School.all
   end
 
+  def index
+    @reviews = Review.all
+  end
+
   def create
     @review = Review.new(review_params)
     @review.save
