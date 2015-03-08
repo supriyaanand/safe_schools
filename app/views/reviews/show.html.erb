@@ -1,0 +1,50 @@
+<div class="container center_div">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+    <h1> Review details</h1>
+      <fieldset>
+        <p>
+          <strong> School </strong><br>
+          <%= School.find(@review.school_id).name %>
+        </p>
+
+        <p>
+          <strong> Is the school located in a safe neighbourhood? Are you concerned about the people in the area?</strong><br>
+           <%= @review.surroundings_good %>
+        </p>
+
+
+        <p>
+          <strong>Do you believe that the school has verified the background of the teachers?</strong><br>
+          <%= @review.teacher_bg %>
+        </p>
+
+        <p>
+          <strong>Do you believe that the school has verified the background of the helpers?</strong><br>
+          <%= @review.helpers_bg %>
+        </p>
+
+        <p>
+          <strong>Are you happy with the security arrangements at the school? </strong><br>
+          <%= @review.security %>
+        </p>
+
+        <p>
+          <strong>Do you / does your child feel safe at school? </strong><br>
+          <%= @review.safe_at_school %>
+        </p>
+
+        <p>
+          <strong> Comments </strong><br>
+          <%= @review.comments %>
+        </p>
+
+        <p>
+          <strong> Overall rating</strong><br>
+          <%= render_stars(@review.overall_rating) %>
+        </p>
+
+      </fieldset>
+      </div>
+  </div>
+</div>
