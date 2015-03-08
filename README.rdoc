@@ -1,28 +1,24 @@
-== README
+  == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  * Ruby version
+    2.0.0p576
 
-Things you may want to cover:
+  * Configuration
+    Ensure Ruby is installed on the system
+    Clone the repo onto your local system
+    cd and run bundle install
 
-* Ruby version
+  * Database creation
+    Run command rake db:migrate
 
-* System dependencies
+  * Database initialization
+    Run rake db:seed
 
-* Configuration
+  * Deployment instructions
+      On Heroku, once repo is pushed, run the migartions with command
 
-* Database creation
+      heroku run rake db:migrate
 
-* Database initialization
+      Seed database with command
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+      heroku run rake db:seed
