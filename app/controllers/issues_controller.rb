@@ -17,6 +17,7 @@ class IssuesController < ApplicationController
     @issue = Issue.new(issue_params)
     @issue.status = "Open"
     @issue.save
+    flash[:success] = "Issue has been recorded!"
     redirect_to @issue
   end
 

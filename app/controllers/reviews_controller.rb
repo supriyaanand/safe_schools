@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.save
+    flash[:success] = "Review has been posted, thanks!"
     redirect_to @review
   end
 
