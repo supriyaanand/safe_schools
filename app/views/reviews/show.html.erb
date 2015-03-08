@@ -2,52 +2,57 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
 
-      <%= link_to root_path, class: 'btn btn-lg btn-primary' do %>
-        <i class="glyphicon glyphicon-plus"></i> Home
-      <% end %>
 
     <h1> Review details</h1>
       <fieldset>
-        <p>
-          <strong> School </strong><br>
+        <strong> School </strong><br>
+        <p class="p-text-field">
           <%= School.find(@review.school_id).name %>
         </p>
-
-        <p>
-          <strong> Is the school located in a safe neighbourhood? Are you concerned about the people in the area?</strong><br>
-           <%= @review.surroundings_good %>
+        
+        <strong> Is the school located in a safe neighbourhood? Are you concerned about the people in the area?</strong><br>
+        <p class="p-text-field">
+          <%= @review.surroundings_good %>
         </p>
-
-
-        <p>
-          <strong>Do you believe that the school has verified the background of the teachers?</strong><br>
+        
+        <strong>Do you believe that the school has verified the background of the teachers?</strong><br>
+        <p class="p-text-field">
           <%= @review.teacher_bg %>
         </p>
 
-        <p>
-          <strong>Do you believe that the school has verified the background of the helpers?</strong><br>
+        <strong>Do you believe that the school has verified the background of the helpers?</strong><br>
+        <p class="p-text-field">
           <%= @review.helpers_bg %>
         </p>
 
-        <p>
-          <strong>Are you happy with the security arrangements at the school? </strong><br>
+        <strong>Are you happy with the security arrangements at the school? </strong><br>
+        <p class="p-text-field">
           <%= @review.security %>
         </p>
-
-        <p>
-          <strong>Do you / does your child feel safe at school? </strong><br>
+        
+        <strong>Do you / does your child feel safe at school? </strong><br>
+        <p class="p-text-field">
           <%= @review.safe_at_school %>
         </p>
 
-        <p>
-          <strong> Comments </strong><br>
+        <strong>Is there an additional person in the bus to help children climb on / alight from the school bus ? </strong><br>
+        <p class="p-text-field">
+          <%= @review.helper_in_bus %>
+        </p>
+
+        <strong>Does security help students to cross the road to go into / leave from school? </strong><br>
+        <p class="p-text-field">
+          <%= @review.aid_student_crossing %>
+        </p>
+
+        <strong> Comments </strong><br>
+        <p class="p-text-box">
           <%= @review.comments %>
         </p>
 
-        <p>
-          <strong> Overall rating</strong><br>
-          <%= render_stars(@review.overall_rating) %>
-        </p>
+        <strong> Overall rating</strong><br>
+        <%= render_stars(@review.overall_rating) %>
+
 
       </fieldset>
 

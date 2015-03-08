@@ -9,6 +9,7 @@
           <fieldset>
             <p>
               <strong>Select school</strong><br>
+              <span class="txt-grey">Don't find your school? Click <%= link_to "here", new_school_path %> </span> <br>
               <%= f.collection_select :school_id, @schools, :id, :name, {class: "form-control", style:"200px"}%>  </p>
             </p>
 
@@ -38,8 +39,18 @@
             </p>
 
             <p>
+              <strong>Is there an additional person in the bus to help children climb on / alight from the school bus ? </strong><br>
+              <%= f.select :helper_in_bus, options_for_select(%w[Yes No]), class: "form-control"%>
+            </p>
+
+            <p>
+              <strong>Does security help students to cross the road to go into / leave from school? </strong><br>
+              <%= f.select :aid_student_crossing, options_for_select(%w[Yes No]), class: "form-control"%>
+            </p>
+
+            <p>
               <strong>Comments <br>
-              <%= f.text_area :comments, {:cols => "55", :rows => "7", class: "form-control", placeholder: "Leave a comment..."} %>
+              <%= f.text_area :comments, {:cols => "55", :rows => "7", class: "form-control", placeholder: "Leave a comment...", required: 'true'} %>
             </p>
 
             <p>

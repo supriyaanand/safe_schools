@@ -1,61 +1,62 @@
 <div class="container center_div">
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h1> Issue </h1>
-          <fieldset>
-            <p>
-              <strong> School </strong><br>
-              <%= School.find(@issue.school_id).name  %>
-            </p>
-
-            <p>
-              <strong>Description </strong><br>
-              <%= @issue.desc %>
-            </p>
-
-            <h4>Comments</h4>
-            <% if @issue.comments.empty? %>
-              <i> No comments yet!</i>
-
-            <% else %>
-              <% @issue.comments.each do |comment| %>
-                <p>
-                  <strong>Commenter:</strong>
-                  <%= comment.commenter %>
-                </p>
-
-                <div class="commentBox">
-                  <%= comment.body %>
-                </div>
-
-                <p>
-                  <%= link_to 'Delete comment', [comment.issue, comment],
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } %>
-                </p>
-              <% end %>
-            <% end %>
-
-            <h4>Add a comment</h4>
-            <%= form_for([@issue, @issue.comments.build]) do |f| %>
-              <p>
-                <%= f.label :commenter %><br>
-                <%= f.text_field :commenter %>
-              </p>
-              <p>
-                <%= f.label :body %><br>
-                <%= f.text_area :body %>
-              </p>
-              <p>
-                <%= f.submit "Add comment", { class: 'btn btn-primary' }%>
-              </p>
-            <% end %>
-
-            <%= link_to root_path, class: 'btn btn-lg btn-primary' do %>
-              <i class="glyphicon glyphicon-plus"></i> Home
-            <% end %>
-
-          </fieldset>
+    <div class="col-md-5">
+      <h2> Issue </h2>
+        <strong> Reported against </strong><br>
+          <p class="p-text-field">
+            <%= School.find(@issue.school_id).name  %><br>
+          </p><br>
+        <strong> Status </strong><br>
+        <button type="button" class="btn btn-sm btn-info"><%= @issue.status %></button><br><br>
+        <form>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="submit" id="menu1" data-toggle="dropdown">Update Status
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li class="dropdown-link"><%= link_to "Reviewing", update_issue_status_path(@issue.id, "Reviewing") %>
+            <li class="dropdown-link"><%= link_to "Closed", update_issue_status_path(@issue.id, "Closed") %>
+          </ul>
+        </div>
+        </form>
+        <br><br>
+        <strong> Description </strong><br>
+        <p class="p-text-box">
+          <%= @issue.desc %>
+        </p>
+        <br><br>
+      <h4>Add a comment</h4>
+      <%= form_for([@issue, @issue.comments.build]) do |f| %>
+        <p>
+          <%= f.label :commenter %><br><span class="txt-grey"> &#42; Type in Reporter to indicate that you are the reporter of this issue</span><br>
+          <%= f.text_field :commenter %>
+        </p>
+        <p>
+          <%= f.label :body %><br>
+          <%= f.text_area :body, {:cols => "55", :rows => "7", class: "form-control", placeholder: "Leave a comment..."} %>
+        </p>
+        <p>
+          <%= f.submit "Add comment", { class: 'btn btn-primary' }%>
+        </p>
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <h3>Comments</h3>
+      <% if @issue.comments.empty? %>
+        <i> No comments yet!</i>
+      <% else %>
+        <% @issue.comments.each do |comment| %>
+          <strong><%= comment.commenter %></strong>
+          <div class="commentBox">
+            <%= comment.body %>
+          </div>
+          <p>
+            <%= link_to 'Delete comment', [comment.issue, comment],
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+          </p>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
+
