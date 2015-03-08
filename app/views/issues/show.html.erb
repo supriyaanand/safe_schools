@@ -8,6 +8,10 @@
           </p><br>
         <strong> Status </strong><br>
         <button type="button" class="btn btn-sm btn-info"><%= @issue.status %></button><br><br>
+        <strong> Summary </strong><br>
+        <p class="p-text-field">
+          <%= @issue.summary  %><br>
+        </p><br>
         <form>
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="submit" id="menu1" data-toggle="dropdown">Update Status

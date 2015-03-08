@@ -29,6 +29,6 @@ class IssuesController < ApplicationController
 
   private
   def issue_params
-    params.require(:issue).permit(:school_id, :desc, :reporter_name, :reporter_email)
+    params.require(:issue).permit(:school_id, :summary, :desc, :reporter_name, :reporter_email)
   end
 end

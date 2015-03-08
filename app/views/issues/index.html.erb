@@ -1,0 +1,25 @@
+<div class="container center_div">
+  <div class="row">
+    <div class="col-md-5">
+
+      <h3>Issues reported</h3>
+      <table class="table table-bordered">
+        <tr>
+          <th>Reported against</th>
+          <th>Status</th>
+          <th>Summary</th>
+          <th>View details</th>
+        </tr>
+        <% @issues.each do |issue| %>
+          <tr>
+            <td> <%= School.find(issue.school_id).name %> </td>
+            <td> <%= issue.status %> </td>
+            <td> <%= issue.summary %> </td>
+            <td><%= link_to 'Details', issue_path(issue) %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+

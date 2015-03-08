@@ -12,6 +12,11 @@
             </p>
 
             <p>
+              <strong>Summary </strong><br>
+              <%= f.text_field :summary, {:cols => "100", :rows => "2", class: "form-control", required: 'true', placeholder: "Please provide a one line summary of the issue..."} %>
+            </p>
+
+            <p>
               <strong>Description </strong><br>
               <%= f.text_area :desc, {:cols => "55", :rows => "7", class: "form-control", required: 'true', placeholder: "Please provide a description. Include date, time, people involved..."} %>
             </p>
