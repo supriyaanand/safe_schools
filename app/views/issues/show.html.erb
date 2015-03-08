@@ -1,0 +1,18 @@
+<div class="container center_div">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1> Issue </h1>
+          <fieldset>
+            <p>
+              <strong> School </strong><br>
+              <%= School.find(@issue.school_id).name  %>
+            </p>
+
+            <p>
+              <strong>Description </strong><br>
+              <%= @issue.desc %>
+            </p>
+          </fieldset>
+    </div>
+  </div>
+</div>

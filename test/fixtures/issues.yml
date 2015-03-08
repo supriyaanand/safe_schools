@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school_id: 
+  desc: MyText
+  reporter_email: MyString
+  reporter_name: MyString
+
+two:
+  school_id: 
+  desc: MyText
+  reporter_email: MyString
+  reporter_name: MyString

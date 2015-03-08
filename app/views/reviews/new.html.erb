@@ -9,12 +9,12 @@
             <p>
               <%= f.label :School %><br>
               <%= f.collection_select :school_id, @schools, :id, :name, {}, {class: "form-control dropdown-menu"}%>  </p>
+            </p>
 
             <p>
               Is the school located in a safe neighbourhood? <br>
               <%= f.select :surroundings_good, options_for_select(%w[Yes No]), {}, class: "form-control dropdown-menu" %>
             </p>
-
 
             <p>
               Do you believe that the school has verified the background of the teachers?<br>
@@ -48,7 +48,7 @@
 
             <div class="control-group">
               <div class="controls">
-              <%= f.submit "Submit review", { class: "btn btn-default" } %>
+              <%= f.submit "Submit review", { class: "btn btn-primary" } %>
                 </div>
             </div>
           </fieldset>
