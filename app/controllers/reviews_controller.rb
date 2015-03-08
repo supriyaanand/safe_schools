@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:school_id, :surroundings_good, :teacher_bg,
                                    :helpers_bg, :security, :safe_at_school,
+                                   :helper_in_bus, :aid_student_crossing,
                                    :comments, :overall_rating )
   end
 
