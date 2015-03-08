@@ -14,6 +14,14 @@ class IssuesController < ApplicationController
   
   def create
     @issue = Issue.new(issue_params)
+    @issue.status = "Open"
+    @issue.save
+    redirect_to @issue
+  end
+
+  def update_status
+    @issue = Issue.find(params[:id])
+    @issue.status = params[:status]
     @issue.save
     redirect_to @issue
   end
