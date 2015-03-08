@@ -1,0 +1,25 @@
+<div class="container center_div">
+  <div class="row">
+    <div class="col-md-5">
+
+      <h3>Suggestion box</h3>
+      <p>
+        We invite the public to suggest ways to combat violence against children at school.
+        Please click <%= link_to 'here', new_suggestion_path %> to add a suggestion.
+        <br><br>
+
+        Here are a few suggestions sent in by the public.
+      </p>
+
+      <table class="table table-bordered">
+
+        <% @suggestions.each do |suggestion| %>
+          <tr>
+            <td><%= suggestion.desc %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+

@@ -20,10 +20,17 @@
           <li><%= link_to new_review_path do %> Add a review <% end %></li>
           <li><%= link_to new_issue_path do %> Report an issue/problem <% end %></li>
           <li><%= link_to issues_path do %> View all issues <% end %></li>
+          <li><%= link_to suggestions_path do %> View all suggestions <% end %></li>
         </ul>
       </div>
   </div>
 </nav>
+
+<div>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+  <% end -%>
+</div>
 
 <%= yield %>
 
