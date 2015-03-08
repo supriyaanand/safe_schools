@@ -9,14 +9,14 @@
         <strong> Status </strong><br>
         <button type="button" class="btn btn-sm btn-info"><%= @issue.status %></button><br><br>
         <form>
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="submit" id="menu1" data-toggle="dropdown">Update Status
-            <span class="caret"></span></button>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-            <li class="dropdown-link"><%= link_to "Reviewing", update_issue_status_path(@issue.id, "Reviewing") %>
-            <li class="dropdown-link"><%= link_to "Closed", update_issue_status_path(@issue.id, "Closed") %>
-          </ul>
-        </div>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="submit" id="menu1" data-toggle="dropdown">Update Status
+              <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+              <li class="dropdown-link"><%= link_to "Reviewing", update_issue_status_path(@issue.id, "Reviewing") %>
+              <li class="dropdown-link"><%= link_to "Closed", update_issue_status_path(@issue.id, "Closed") %>
+            </ul>
+          </div>
         </form>
         <br><br>
         <strong> Description </strong><br>
@@ -25,7 +25,7 @@
         </p>
         <br><br>
       <h4>Add a comment</h4>
-      <%= form_for([@issue, @issue.comments.build]) do |f| %>
+      <%= form_for([@issue, @comments]) do |f| %>
         <p>
           <%= f.label :commenter %><br><span class="txt-grey"> &#42; Type in Reporter to indicate that you are the reporter of this issue</span><br>
           <%= f.text_field :commenter %>
@@ -41,6 +41,8 @@
     </div>
     <div class="col-md-5">
       <h3>Comments</h3>
+      <% puts "hello" + @issue.comments.inspect %>  <br>
+      <% puts "#{@issue.comments.empty?}" %>
       <% if @issue.comments.empty? %>
         <i> No comments yet!</i>
       <% else %>
