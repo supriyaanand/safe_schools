@@ -1,22 +1,33 @@
-<%= link_to root_path, class: 'btn btn-lg btn-primary' do %>
-  <i class="glyphicon glyphicon-plus"></i> Home
-<% end %>
+<div class="container center_div">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
 
-<h1> Add school details </h1>
+      <h3> Add school details </h3>
 
-<%= form_for :school, url: schools_path do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+      <%= form_for :school, url: schools_path, :html => { class: "form-horizontal" } do |f| %>
+        <div class="form-group">
+          <fieldset>
+            <p>
+              <%= f.label :name %><br>
+              <%= f.text_field :name %>
+            </p>
 
-  <p>
-    <%= f.label :locality %><br>
-    <%= f.text_area :locality %>
-  </p>
+            <p>
+              <%= f.label :locality %><br>
+              <%= f.text_area :locality %>
+            </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+            <div class="control-group">
+              <div class="controls">
+                <%= f.submit "Add school", { class: 'btn btn-primary' } %>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
 

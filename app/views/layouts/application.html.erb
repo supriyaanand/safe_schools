@@ -7,6 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <i class="glyphicon glyphicon-home"></i> Safe &#64; School
+      <% end %>
+    </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><%= link_to new_school_path do %> Add a school <% end %></li>
+          <li><%= link_to new_review_path do %> Add a review <% end %></li>
+          <li><%= link_to new_issue_path do %> Report an issue <% end %></li>
+        </ul>
+      </div>
+  </div>
+</nav>
 
 <%= yield %>
 
