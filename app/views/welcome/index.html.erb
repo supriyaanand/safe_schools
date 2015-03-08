@@ -1,2 +1,49 @@
-<h1>Safe Schools </h1>
-<p>Rate your school, report issues, get school authorities to respond, feel safe in schools!</p>
+<html>
+<head>
+  <style>
+    h1 {color:darkred;}
+  </style>
+</head>
+<h1 align="center"> Safe Schools </h1>
+<body class="unique">
+
+<h3 align="center">Rate your school, report issues, get school authorities to respond, feel safe in schools!</h3>
+
+<br>  <br>
+
+<%= link_to new_school_path, class: 'btn btn-lg btn-primary' do %>
+  <i class="glyphicon glyphicon-plus"></i> Add a school
+<% end %>
+
+<br>  <br>
+
+<%= link_to new_review_path, class: 'btn btn-lg btn-primary' do %>
+<i class="glyphicon glyphicon-plus"></i> Add a review
+<% end %>
+
+<br>   <br>
+
+<%= link_to new_issue_path, class: 'btn btn-lg btn-primary' do %>
+<i class="glyphicon glyphicon-plus"></i> Report an issue
+<% end %>
+
+<br>   <br>
+
+<div class="container" >
+  <div class="row">
+    <div class="col-md-4">
+
+
+<p>
+
+  A portal designed for the purpose of inviting parents, students, teachers and all concerned citizens to share their experiences, offer suggestions and solutions to eliminate the growing evil of harassing children in our society.
+
+  Come join us in rooting out this voilence against our children!
+
+  Let us make schools a safe haven for kids to grow and blossom into fine individuals!
+</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
