@@ -15,10 +15,17 @@
     Run rake db:seed
 
   * Deployment instructions
-      On Heroku, once repo is pushed, run the migartions with command
+     # On Heroku, once repo is pushed, run the migrations with command
 
       heroku run rake db:migrate
 
-      Seed database with command
+     # Seed database with command
 
       heroku run rake db:seed
+
+  * Local deploy
+      # cd into project root directory and run command
+
+	rails s
+
+	The server will start up on localhost, port 3000
