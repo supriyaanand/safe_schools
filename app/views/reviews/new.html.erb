@@ -55,7 +55,7 @@
 
             <p>
               <strong>Overall rating</strong><br>
-              <%= f.select :overall_rating, options_for_select(1..5), class: "form-control " %>
+              <%= f.select :overall_rating, options_for_select(["5 (Excellent)", "4 (Very Good)", "3 (Good)", "2 (Average)", "1 (Needs to improve)"]), class: "form-control " %>
             </p>
 
             <div class="control-group">
